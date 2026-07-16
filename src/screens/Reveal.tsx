@@ -30,7 +30,7 @@ export function Reveal({ apology, onContinue }: RevealProps) {
         <button type="button" className="cta-primary" onClick={onContinue}>
           See Our Date Plan
         </button>
-        <p className="journey-label">A Heartfelt Dates Journey</p>
+        <p className="journey-label">Kai Wen and Hui Jing's Journey</p>
       </div>
     </main>
   )
