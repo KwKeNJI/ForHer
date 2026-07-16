@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1.0" name="viewport"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script></head><body>
+<!-- STITCH_THREEJS_START:ANIMATION_2 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_2" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_2');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Create a heart shape using BufferGeometry
+const heartShape = new THREE.Shape();
+heartShape.moveTo(0, 0.5);
+heartShape.bezierCurveTo(0, 0.5, -0.5, 1, -1, 1);
+heartShape.bezierCurveTo(-1.5, 1, -1.5, 0.35, -1.5, 0.35);
+heartShape.bezierCurveTo(-1.5, 0, -1, -0.7, 0, -1.5);
+heartShape.bezierCurveTo(1, -0.7, 1.5, 0, 1.5, 0.35);
+heartShape.bezierCurveTo(1.5, 0.35, 1.5, 1, 1, 1);
+heartShape.bezierCurveTo(0.5, 1, 0, 0.5, 0, 0.5);
+
+const geometry = new THREE.ExtrudeGeometry(heartShape, { depth: 0.4, bevelEnabled: true, bevelThickness: 0.1, bevelSize: 0.1, bevelSegments: 5 });
+const material = new THREE.MeshPhongMaterial({ color: 0xffb6c1, shininess: 100 });
+const heartMesh = new THREE.Mesh(geometry, material);
+heartMesh.scale.set(0.2, 0.2, 0.2);
+heartMesh.rotation.x = Math.PI;
+scene.add(heartMesh);
+
+const light = new THREE.PointLight(0xffffff, 1, 100);
+light.position.set(5, 5, 5);
+scene.add(light);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    heartMesh.rotation.y += 0.01;
+    heartMesh.position.y = Math.sin(Date.now() * 0.002) * 0.2;
+    renderer.render(scene, camera);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_2 -->
+
+
+</body></html>

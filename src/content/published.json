@@ -1,0 +1,29 @@
+{
+  "apology": "I said something that hurt you, and I am truly sorry. You deserved care in that moment, and I want to make it right — starting with this date, and with how I show up for you from here on.",
+  "datePlan": {
+    "date": "Saturday, August 15, 2026",
+    "activities": [
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+        "vibe": "Quiet",
+        "title": "Sunset Picnic at the Park",
+        "time": "5:00 PM",
+        "description": "A selection of your favorite cheeses, fresh strawberries, and that sparkling cider you love."
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80",
+        "vibe": "Adventurous",
+        "title": "Homemade Pasta Dinner",
+        "time": "7:00 PM",
+        "description": "Making a mess in the kitchen together while we learn to roll the perfect fettuccine from scratch."
+      },
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+        "vibe": "Candle-lit",
+        "title": "Late Night Stargazing",
+        "time": "8:30 PM",
+        "description": "Wrapping up in our thickest blankets with a thermos of hot cocoa to find the constellations."
+      }
+    ]
+  }
+}

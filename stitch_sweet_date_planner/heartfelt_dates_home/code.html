@@ -1,0 +1,482 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Heartfelt Dates | A Sincere Apology</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .glass-card {
+            background: rgba(255, 253, 208, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .entrance-anim {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        .floating-heart {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        body {
+            background-color: #fefccf;
+            overflow-x: hidden;
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #78555e;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#191b29",
+                    "tertiary-container": "#ffd967",
+                    "on-primary-fixed-variant": "#5e3e47",
+                    "primary-container": "#ffd1dc",
+                    "on-background": "#1d1d03",
+                    "inverse-surface": "#323214",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-tertiary-container": "#765e00",
+                    "tertiary-fixed": "#ffe088",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-secondary-container": "#626374",
+                    "surface-dim": "#dedcb1",
+                    "background": "#fefccf",
+                    "on-primary-fixed": "#2d141c",
+                    "surface": "#fefccf",
+                    "surface-container-high": "#eceabe",
+                    "primary": "#78555e",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "secondary-fixed": "#e1e1f5",
+                    "primary-fixed": "#ffd9e2",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f8f6c9",
+                    "surface-bright": "#fefccf",
+                    "surface-container-highest": "#e6e5b9",
+                    "primary-fixed-dim": "#e7bbc6",
+                    "surface-tint": "#78555e",
+                    "surface-container": "#f2f0c4",
+                    "on-surface": "#1d1d03",
+                    "tertiary": "#735c00",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#e7bbc6",
+                    "outline-variant": "#d3c3c5",
+                    "on-secondary-fixed-variant": "#444655",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#e1e1f5",
+                    "outline": "#817476",
+                    "surface-variant": "#e6e5b9",
+                    "secondary": "#5c5d6e",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f5f3c7",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#c5c5d8",
+                    "on-surface-variant": "#4f4446",
+                    "on-primary-container": "#7a5761",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "max-width": "1200px",
+                    "base": "8px",
+                    "md": "24px",
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "xl": "80px",
+                    "margin-desktop": "auto"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<header class="w-full sticky top-0 z-50 bg-surface/70 backdrop-blur-md dark:bg-surface-dim/70 border-b border-outline-variant/30 shadow-[0px_10px_30px_rgba(255,209,220,0.3)]">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-lg py-sm">
+<div class="font-headline-md text-headline-md text-primary font-bold italic">Heartfelt Dates</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Our Story</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Date Ideas</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Apologies</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Planning</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-md py-xs rounded-full font-label-md text-label-md hover:scale-105 transition-transform duration-200">
+                Plan a Date
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_3 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+float heart(vec2 p) {
+    p.x *= 1.2;
+    p.y -= 0.25 * sqrt(abs(p.x));
+    return length(p) - 0.5;
+}
+
+void main() {
+    vec2 uv = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+    
+    // Background soft pink gradient
+    vec3 color = vec3(1.0, 0.82, 0.86) + 0.1 * cos(u_time + uv.xyx + vec3(0, 2, 4));
+    
+    // Floating hearts
+    for(float i = 0.0; i < 8.0; i++) {
+        float t = u_time * (0.3 + i * 0.1) + i * 1.5;
+        vec2 pos = vec2(sin(t) * 0.8, fract(t * 0.2) * 2.5 - 1.25);
+        float h = heart((uv - pos) * (2.0 + i * 0.5));
+        float mask = smoothstep(0.01, -0.01, h);
+        color = mix(color, vec3(1.0, 0.4, 0.5), mask * 0.3);
+    }
+    
+    // Soft glow
+    color += 0.05 * sin(u_time * 0.5 + length(uv) * 10.0);
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_3 -->
+<div class="relative z-10 max-w-[1200px] mx-auto px-lg grid md:grid-cols-2 gap-xl items-center">
+<div class="entrance-anim text-center md:text-left">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-md italic">
+                        I'm truly sorry...
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg leading-relaxed max-w-lg">
+                        I know words can't fix everything, but my heart is set on making it up to you. Let's start a new chapter and make beautiful new memories together.
+                    </p>
+<div class="flex gap-md justify-center md:justify-start">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md hover:scale-105 transition-transform shadow-lg">
+                            See My Promise
+                        </button>
+</div>
+</div>
+<div class="relative flex justify-center items-center entrance-anim delay-1 h-[400px]">
+<!-- STITCH_THREEJS_START:ANIMATION_2 class="absolute inset-0 w-full h-full floating-heart" -->
+<div class="absolute inset-0 w-full h-full floating-heart" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_2" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_2');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Create a heart shape using BufferGeometry
+const heartShape = new THREE.Shape();
+heartShape.moveTo(0, 0.5);
+heartShape.bezierCurveTo(0, 0.5, -0.5, 1, -1, 1);
+heartShape.bezierCurveTo(-1.5, 1, -1.5, 0.35, -1.5, 0.35);
+heartShape.bezierCurveTo(-1.5, 0, -1, -0.7, 0, -1.5);
+heartShape.bezierCurveTo(1, -0.7, 1.5, 0, 1.5, 0.35);
+heartShape.bezierCurveTo(1.5, 0.35, 1.5, 1, 1, 1);
+heartShape.bezierCurveTo(0.5, 1, 0, 0.5, 0, 0.5);
+
+const geometry = new THREE.ExtrudeGeometry(heartShape, { depth: 0.4, bevelEnabled: true, bevelThickness: 0.1, bevelSize: 0.1, bevelSegments: 5 });
+const material = new THREE.MeshPhongMaterial({ color: 0xffb6c1, shininess: 100 });
+const heartMesh = new THREE.Mesh(geometry, material);
+heartMesh.scale.set(0.2, 0.2, 0.2);
+heartMesh.rotation.x = Math.PI;
+scene.add(heartMesh);
+
+const light = new THREE.PointLight(0xffffff, 1, 100);
+light.position.set(5, 5, 5);
+scene.add(light);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    heartMesh.rotation.y += 0.01;
+    heartMesh.position.y = Math.sin(Date.now() * 0.002) * 0.2;
+    renderer.render(scene, camera);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_2 -->
+</div>
+</div>
+</section>
+<!-- Date Planner Section -->
+<section class="py-xl max-w-[1200px] mx-auto px-lg">
+<div class="text-center mb-xl">
+<span class="text-primary font-label-md tracking-widest uppercase">Our Next Adventure</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-xs">Curated Moments for Us</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Activity Card 1 -->
+<div class="glass-card p-md rounded-xl shadow-sm entrance-anim delay-1 hover:shadow-[0px_10px_30px_rgba(255,209,220,0.3)] transition-all duration-500 flex flex-col group">
+<div class="relative h-64 rounded-lg overflow-hidden mb-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A romantic sunset picnic scene with a woven basket and a soft pink blanket on green grass, captured in a warm, ethereal golden hour glow. The style is soft-focus and sentimental, matching a whimsical cream and pink color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-aE6KfZpDiCqE_hVz8vNiuy3Ne9SQ2wkZoXp_CZJZn-tWCwlk3IyWlojSImGnkCHnbBRLl8auNPtOv9yRRKXZx16440uoYs0X7uO7Cs6f_4NkPqZYXuEYqfoocYkoRxe4GOW0VPx-y21wcMz0v6X0aCdu7T5R-Qvh002MtsbhyAtDuZEwJ4KT-HgIilj44bIHUM5VReThKkXytNZogvikSxn8J4QEIvciHKRq7JbEvR7cOq5_vOuVhpMdkldA1O60UU_jxgzdGvA')"></div>
+<span class="absolute top-sm right-sm bg-tertiary-container/80 backdrop-blur-md px-sm py-xs rounded-full font-label-md text-tertiary text-[10px] tracking-wider uppercase border border-tertiary/20">Quiet</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Sunset Picnic at the Park</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-lg">A selection of your favorite cheeses, fresh strawberries, and that sparkling cider you love.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-md">
+<button class="flex items-center gap-xs text-primary font-label-md hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-body-md">edit</span>
+                            Edit
+                        </button>
+<button class="flex items-center gap-xs text-error font-label-md hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-body-md">delete</span>
+                            Remove
+                        </button>
+</div>
+</div>
+<!-- Activity Card 2 -->
+<div class="glass-card p-md rounded-xl shadow-sm entrance-anim delay-2 hover:shadow-[0px_10px_30px_rgba(255,209,220,0.3)] transition-all duration-500 flex flex-col group">
+<div class="relative h-64 rounded-lg overflow-hidden mb-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A dreamy night sky filled with sparkling stars and a crescent moon, seen through the silhouette of lush pine trees. Soft lavender and deep indigo tones dominate the palette, creating a peaceful and intimate celestial atmosphere for a romantic couple." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDx6p3xkMyjT1x76jLEZkBH_uPkEaz6uzNb8R6Mue2hzJX7VZ_ELpIs8YhAk7OcQq8SNFn9J_cs9U83zaWdYIhIQBGIRUkhkD3XjdUqZpzZrl-fk0piRASrw_QLB84Rz55nc-SPXAnWFvxJiUdu8AEaPUXjkfkUcIst5NCwU-09wqrdAli48yJJjK1lrcyGfgLNKgair93dq8K5ZGgHNFbDXdi2XWnWUrYldw2hD5aYxBzM71asdXFdnU4JYoRUdwidoy6iKeBVSRk')"></div>
+<span class="absolute top-sm right-sm bg-primary-container/80 backdrop-blur-md px-sm py-xs rounded-full font-label-md text-primary text-[10px] tracking-wider uppercase border border-primary/20">Candle-lit</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Late Night Stargazing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-lg">Wrapping up in our thickest blankets with a thermos of hot cocoa to find the constellations.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-md">
+<button class="flex items-center gap-xs text-primary font-label-md hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-body-md">edit</span>
+                            Edit
+                        </button>
+<button class="flex items-center gap-xs text-error font-label-md hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-body-md">delete</span>
+                            Remove
+                        </button>
+</div>
+</div>
+<!-- Activity Card 3 -->
+<div class="glass-card p-md rounded-xl shadow-sm entrance-anim delay-3 hover:shadow-[0px_10px_30px_rgba(255,209,220,0.3)] transition-all duration-500 flex flex-col group">
+<div class="relative h-64 rounded-lg overflow-hidden mb-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A cozy kitchen scene with flour dusted on a wooden table, fresh handmade fettuccine nests, and a warm ceramic bowl. Soft morning light filters through a nearby window, illuminating the scene in creamy whites and earthy wood tones, evoking a sense of slow, heartfelt craft." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXU-LAjt_9XRzrPu4jywCd82mQQprBJB8F6KxcevjKga_h7p6640qVPAv_uXE081yJugECxmIBZnu7BHqe7uuyhqimQWyNjHuh9b6lZBnefRhJhU0ng0OCyyhAKpCEkah3NMIYBB1Dat8PvDjWPHffBDFwm92dRj2kxsgmcF8XlvuZjuANa5JdyVGBCArHVmkYLCkRtnXSN6XlNb4NDFjO10tjw7Uk95ExgvKjIX9xsngYuHpkojoe9BXfA0AE6mgeR34FgwbvDe4')"></div>
+<span class="absolute top-sm right-sm bg-tertiary-container/80 backdrop-blur-md px-sm py-xs rounded-full font-label-md text-tertiary text-[10px] tracking-wider uppercase border border-tertiary/20">Adventurous</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Homemade Pasta Dinner</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-lg">Making a mess in the kitchen together while we learn to roll the perfect fettuccine from scratch.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-md">
+<button class="flex items-center gap-xs text-primary font-label-md hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-body-md">edit</span>
+                            Edit
+                        </button>
+<button class="flex items-center gap-xs text-error font-label-md hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-body-md">delete</span>
+                            Remove
+                        </button>
+</div>
+</div>
+</div>
+<div class="mt-lg flex justify-center entrance-anim delay-3">
+<button class="group flex items-center gap-sm bg-surface-container-high border-2 border-primary/20 text-primary px-xl py-md rounded-full font-label-md hover:bg-primary-container hover:border-primary transition-all duration-300">
+<span class="material-symbols-outlined group-hover:rotate-90 transition-transform">add</span>
+                    Plan another activity
+                </button>
+</div>
+</section>
+</main>
+<footer class="w-full mt-xl bg-surface-container-low dark:bg-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto py-lg px-lg flex flex-col items-center gap-md">
+<div class="font-headline-md text-headline-md text-primary italic">Heartfelt Dates</div>
+<p class="font-caption text-caption text-secondary opacity-80">© 2024 Made with love for your forever person.</p>
+<div class="flex gap-lg">
+<a class="text-secondary hover:text-tertiary transition-colors font-caption text-caption" href="#">Privacy Policy</a>
+<a class="text-secondary hover:text-tertiary transition-colors font-caption text-caption" href="#">Terms of Service</a>
+<a class="text-secondary hover:text-tertiary transition-colors font-caption text-caption" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'scale(0.8)';
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = 'scale(1)';
+        });
+
+        // Hover Effect on buttons
+        const interactives = document.querySelectorAll('button, a');
+        interactives.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                cursor.style.backgroundColor = 'rgba(120, 85, 94, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body></html>
