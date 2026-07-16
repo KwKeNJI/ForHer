@@ -10,7 +10,7 @@ export function Reveal({ apology, onContinue }: RevealProps) {
     <main className="screen reveal-screen">
       <FloatingAccents />
       <div className="reveal-content">
-        <p className="brand-mark">Heartfelt Dates</p>
+        <p className="brand-mark">Kai Wen and Hui Jing</p>
         <blockquote className="apology">{apology}</blockquote>
         <svg
           className="squiggle-svg"

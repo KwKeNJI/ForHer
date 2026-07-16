@@ -54,7 +54,6 @@ export function FloatingHeart3D() {
     })
     const heartMesh = new THREE.Mesh(geometry, material)
     heartMesh.scale.set(0.2, 0.2, 0.2)
-    heartMesh.rotation.x = Math.PI
     scene.add(heartMesh)
 
     const light = new THREE.PointLight(0xffffff, 1, 100)

@@ -23,9 +23,9 @@ export function Envelope({ onOpen }: EnvelopeProps) {
       <div className="glow glow-bottom" aria-hidden="true" />
 
       <div className="envelope-content">
-        <p className="brand-mark">Heartfelt Dates</p>
+        <p className="brand-mark">Kai Wen and Hui Jing</p>
         <h1 className="envelope-headline">A message from my heart...</h1>
-        <p className="envelope-subhead">Waiting to be discovered by you</p>
+        <p className="envelope-subhead">Waiting to be discovered by Hui Jing</p>
         <div className="squiggle" aria-hidden="true" />
 
         <div

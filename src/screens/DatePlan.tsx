@@ -1,6 +1,7 @@
 import type { PublishedContent } from '../content/types'
 import { FloatingHeart3D } from '../effects/FloatingHeart3D'
 import { HeartShader } from '../effects/HeartShader'
+import { AgreePrompt } from './AgreePrompt'
 
 type DatePlanProps = {
   datePlan: PublishedContent['datePlan']
@@ -12,7 +13,7 @@ export function DatePlan({ datePlan }: DatePlanProps) {
       <section className="date-plan-hero">
         <HeartShader className="hero-shader" />
         <div className="date-plan-hero-content">
-          <p className="brand-mark">Heartfelt Dates</p>
+          <p className="brand-mark">Kai Wen and Hui Jing</p>
           <p className="section-eyebrow">Our next adventure</p>
           <h1 className="date-plan-headline">Our Date Plan</h1>
           <p className="shared-date">{datePlan.date}</p>
@@ -39,6 +40,8 @@ export function DatePlan({ datePlan }: DatePlanProps) {
           </article>
         ))}
       </section>
+
+      <AgreePrompt />
     </main>
   )
 }

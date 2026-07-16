@@ -525,6 +525,108 @@ img {
   flex-grow: 1;
 }
 
+/* Agree prompt */
+.agree-prompt {
+  width: min(100%, 36rem);
+  margin: 0 auto 3.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  animation: fade-up 0.7s ease both;
+}
+
+.agree-question {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.agree-actions {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  min-height: 4.5rem;
+}
+
+.agree-yes {
+  animation: agree-yes-idle 2.4s ease-in-out infinite;
+}
+
+.agree-yes--pulse {
+  animation: agree-yes-pulse 0.45s ease;
+}
+
+.agree-no {
+  position: relative;
+  z-index: 2;
+  min-height: 48px;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-full);
+  background: var(--surface-container-high);
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline-variant);
+  font-weight: 600;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
+  box-shadow: 0 4px 14px rgba(34, 25, 25, 0.06);
+}
+
+.agree-no:hover,
+.agree-no:focus-visible {
+  background: var(--surface-container);
+}
+
+.agree-prompt--done {
+  padding-block: 0.5rem 3.5rem;
+}
+
+.agree-celebration {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--primary);
+  animation: agree-celebrate 0.7s ease both;
+}
+
+@keyframes agree-yes-idle {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-cta);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 12px 35px rgba(185, 7, 96, 0.45);
+  }
+}
+
+@keyframes agree-yes-pulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes agree-celebrate {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /* Accents / motion */
 .floating-accents {
   position: absolute;

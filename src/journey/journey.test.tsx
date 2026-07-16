@@ -7,9 +7,9 @@ import { Journey } from './Journey'
 
 const testContent: PublishedContent = {
   apology:
-    'I hurt you with what I said, and I am sorry. I want to make it right.',
+    'I made you mad with what I said, and I am sorry. I want to make it up to you.',
   datePlan: {
-    date: 'Saturday, August 15, 2026',
+    date: 'Saturday, August 1, 2026',
     activities: [
       {
         imageUrl: 'https://example.com/picnic.jpg',
