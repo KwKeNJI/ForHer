@@ -29,12 +29,6 @@ export function AgreePrompt() {
     window.setTimeout(() => setYesPulse(false), 450)
   }, [agreed])
 
-  const onNoClick = () => {
-    if (agreed) return
-    setYesPulse(true)
-    window.setTimeout(() => agree(), 320)
-  }
-
   if (agreed) {
     return (
       <section className="agree-prompt agree-prompt--done" aria-live="polite">
@@ -63,7 +57,6 @@ export function AgreePrompt() {
           onMouseEnter={dodgeNo}
           onFocus={dodgeNo}
           onPointerDown={dodgeNo}
-          onClick={onNoClick}
         >
           No
         </button>
