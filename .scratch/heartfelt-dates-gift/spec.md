@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: implemented
 
 # Heartfelt Dates — Gift Journey Spec
 
