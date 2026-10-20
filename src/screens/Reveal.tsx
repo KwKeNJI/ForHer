@@ -10,7 +10,7 @@ export function Reveal({ apology, onContinue }: RevealProps) {
     <main className="screen reveal-screen">
       <FloatingAccents />
       <div className="reveal-content">
-        <p className="brand-mark">Kai Wen and Hui Jing</p>
+        <p className="brand-mark">Kai Wen </p>
         <blockquote className="apology">{apology}</blockquote>
         <svg
           className="squiggle-svg"
@@ -30,7 +30,7 @@ export function Reveal({ apology, onContinue }: RevealProps) {
         <button type="button" className="cta-primary" onClick={onContinue}>
           See Our Date Plan
         </button>
-        <p className="journey-label">Kai Wen and Hui Jing's Journey</p>
+        <p className="journey-label">Kai Wen 's Journey</p>
       </div>
     </main>
   )
